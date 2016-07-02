@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.mvptutorial.ui.edit.EditViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <Button
+            android:id="@+id/done_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:text="@string/note_edit_done" />
+
+        <EditText
+            android:id="@+id/edit_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/done_button"
+            android:layout_below="@id/toolbar"
+            android:text="@{viewModel.text}"
+            android:layout_margin="16dp"
+            android:gravity="top" />
+    </RelativeLayout>
+
+</layout>
