@@ -55,7 +55,6 @@ public class EditActivity extends AppCompatActivity implements EditPresenter.Vie
     public void onAttached(final EditViewModel viewModel) {
         this.viewModel = viewModel;
         binding.setViewModel(viewModel);
-        binding.editTextView.addTextChangedListener(viewModel.createTextWatcher());
         binding.doneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

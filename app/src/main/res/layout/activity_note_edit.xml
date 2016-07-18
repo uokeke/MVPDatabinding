@@ -32,7 +32,7 @@
             android:layout_height="match_parent"
             android:layout_above="@id/done_button"
             android:layout_below="@id/toolbar"
-            android:text="@{viewModel.text}"
+            android:text="@={viewModel.text}"
             android:layout_margin="16dp"
             android:gravity="top" />
     </RelativeLayout>

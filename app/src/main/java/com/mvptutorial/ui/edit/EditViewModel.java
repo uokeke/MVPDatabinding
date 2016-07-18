@@ -22,43 +22,21 @@ import android.databinding.ObservableField;
 import android.text.Editable;
 import android.text.TextWatcher;
 
+import com.mvptutorial.note.BR;
+
 import java.io.Serializable;
 import java.util.Objects;
 
 public class EditViewModel extends BaseObservable implements Serializable {
-    private ObservableField<String> text;
-
-    public EditViewModel() {
-        text = new ObservableField<>(null);
-    }
+    private String text;
 
     @Bindable
     public String getText() {
-        return this.text.get();
+        return this.text;
     }
 
     public void setText(String text) {
-        if (!Objects.equals(getText(), text)) {
-            this.text.set(text);
-        }
-    }
-
-    public TextWatcher createTextWatcher() {
-        return new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                text.set(editable.toString());
-            }
-        };
+        this.text = text;
+        notifyPropertyChanged(BR.text);
     }
 }
